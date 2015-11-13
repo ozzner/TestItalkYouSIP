@@ -56,6 +56,7 @@ public class CallStateReceiver extends BroadcastReceiver {
                     context.startActivity(i);
                     // Ring
                     mEngine.getSoundService().startRingTone();
+                    mEngine.getSoundService().stopRingBackTone();
                     break;
                 case INCALL:
                     Log.i("DEBUG", "Call connected");
