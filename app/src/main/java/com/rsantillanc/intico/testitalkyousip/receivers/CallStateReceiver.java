@@ -43,10 +43,11 @@ public class CallStateReceiver extends BroadcastReceiver {
 
             switch(callState){
                 case NONE:
+                    Log.i("INTICO", "NONE");
                 default:
                     break;
                 case INCOMING:
-                    Log.i("DEBUG", "Incoming call");
+                    Log.i("INTICO", "Incoming call");
                     Intent i = new Intent(context.getApplicationContext(),
                             ReceiveCallActivity.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -59,11 +60,11 @@ public class CallStateReceiver extends BroadcastReceiver {
                     mEngine.getSoundService().stopRingBackTone();
                     break;
                 case INCALL:
-                    Log.i("DEBUG", "Call connected");
+                    Log.i("INTICO", "Call connected");
                     mEngine.getSoundService().stopRingTone();
                     break;
                 case TERMINATED:
-                    Log.i("DEBUG", "Call terminated");
+                    Log.i("INTICO", "Call terminated");
                     mEngine.getSoundService().stopRingTone();
                     mEngine.getSoundService().stopRingBackTone();
                     break;

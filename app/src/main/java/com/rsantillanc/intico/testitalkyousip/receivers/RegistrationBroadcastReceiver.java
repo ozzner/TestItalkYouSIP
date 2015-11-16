@@ -20,28 +20,28 @@ public class RegistrationBroadcastReceiver extends BroadcastReceiver {
         if (NgnRegistrationEventArgs.ACTION_REGISTRATION_EVENT.equals(action)) {
             NgnRegistrationEventArgs args = intent.getParcelableExtra(NgnEventArgs.EXTRA_EMBEDDED);
             if (args == null) {
-                Log.d("DEBUG", "Invalid event args");
+                Log.d("INTICO", "Invalid event args");
                 return;
             }
 
             switch (args.getEventType()) {
                 case REGISTRATION_NOK:
-                    Log.d("DEBUG", "Failed to register :(");
+                    Log.d("INTICO", "Failed to register :(");
                     break;
                 case UNREGISTRATION_OK:
-                    Log.d("DEBUG", "You are now unregistered :)");
+                    Log.d("INTICO", "You are now unregistered :)");
                     break;
                 case REGISTRATION_OK:
-                    Log.d("DEBUG", "You are now registered :)");
+                    Log.d("INTICO", "You are now registered :)");
                     break;
                 case REGISTRATION_INPROGRESS:
-                    Log.d("DEBUG", "Trying to register...");
+                    Log.d("INTICO", "Trying to register...");
                     break;
                 case UNREGISTRATION_INPROGRESS:
-                    Log.d("DEBUG", "Trying to unregister...");
+                    Log.d("INTICO", "Trying to unregister...");
                     break;
                 case UNREGISTRATION_NOK:
-                    Log.d("DEBUG", "Failed to unregister :(");
+                    Log.d("INTICO", "Failed to unregister :(");
                     break;
             }
 
